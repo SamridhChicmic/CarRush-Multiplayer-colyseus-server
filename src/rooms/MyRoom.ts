@@ -22,7 +22,11 @@ export class MyRoom extends Room<MyRoomState> {
     this.onMessage("weaponThrow", (client, data) => {
       let currCar = this.state.Car;
       currCar.weaponThrow = data.weaponthrow;
-      console.log("data-->",data.weaponthrow)
+    });
+    this.onMessage("groundItemRandomNumber", (client, data) => {
+      console.log("data-->", data.randomNumberArray);
+      let curritem = this.state.GroundItem;
+      curritem.RandomNumberArray = data.randomNumberArray;
     });
   }
 
